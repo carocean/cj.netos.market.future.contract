@@ -1,4 +1,4 @@
-package cj.netos.market.future.program;
+package cj.netos.market.future.contract.program;
 
 import cj.studio.ecm.annotation.CjService;
 import cj.studio.ecm.net.Circuit;

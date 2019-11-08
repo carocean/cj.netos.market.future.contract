@@ -10,13 +10,15 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile group: 'cj.netos.openport', name: 'cj.studio.openport', version: ref_cj_studio_openport_version
+    compile group: 'org.apache.jdbm', name: 'jdbm', version: '3.0-alpha5'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
     implementation project(':cj.netos.market.future.contract.ports')
     compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 }
 
 task copyReferences(type: Copy) {
     from configurations.compileClasspath.files {
-        include 'cj.netos.market.future.contract.ports-*.jar','jjwt-*.jar','jackson-*.jar'
+        include 'cj.netos.market.future.contract.ports-*.jar','jjwt-*.jar','jackson-*.jar','org.apache.jdbm-*.jar','log4j-*.jar'
     }
     into 'src/main/resources/cj/references'
 }
