@@ -1,9 +1,9 @@
 {
   "valids": [
     {
-      "name": "future",
+      "name": "contract",
       "uris": [
-        "app://future:way"
+        "app://contract:way"
       ],
       "props": {}
     }

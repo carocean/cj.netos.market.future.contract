@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="cj.netos.market.future.cj.netos.market.future.engine.dealmaking.main" target="1.8" />
+      <module name="cj.netos.market.future.cj.netos.market.future.engine.dealmaking.test" target="1.8" />
+      <module name="cj.netos.market.future.cj.netos.market.future.ports.main" target="1.8" />
+      <module name="cj.netos.market.future.cj.netos.market.future.ports.test" target="1.8" />
+      <module name="cj.netos.market.future.cj.netos.market.future.program.main" target="1.8" />
+      <module name="cj.netos.market.future.cj.netos.market.future.program.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
