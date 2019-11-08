@@ -20,12 +20,6 @@ task releaseToProgram(type: Copy) {
     include '**/*.jar'
     exclude '**/*-javadoc.jar','**/*-sources.jar'
 }
-task releaseToOutputs(type: Copy) {
-    dependsOn "build"
-    from 'build/libs/'
-    into '../outputs'
-    include '**/*.jar'
-}
 task release(type:Copy){
-    dependsOn "releaseToProgram","releaseToOutputs"
+    dependsOn "releaseToProgram"
 }
