@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'cj.netos.finance'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    compile group: 'cj.studio.gateway2', name: 'cj.studio.orm.mybatis', version: ref_cj_studio_orm_mybatis
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'
+    compile project(':cj.netos.market.future.ports');
+}
+task copyReferences(type: Copy) {
+    from configurations.compileClasspath.files {
+        include 'mybatis-*.jar','jjwt-*.jar','jackson-*.jar','mysql-connector-java-8.0.17.jar'
+    }
+    into 'src/main/resources/cj/references'
+}
+build.dependsOn('copyReferences')
+task copyRefembeds(type: Copy) {
+    from configurations.compileClasspath.files {
+        include 'cj.studio.orm.mybatis-*.jar'
+    }
+    into 'src/main/resources/cj/refembeds'
+}
+build.dependsOn('copyRefembeds')
+
+task releaseToHost(type: Copy) {
+    dependsOn "build"
+    from 'build/libs/'
+    into '../gateway/gateway-2.3.7/assemblies/future/plugins/dealmaking-engine.plugin'
+    include '**/*.jar'
+    exclude '**/*-javadoc.jar','**/*-sources.jar'
+}
+
+task release(type:Copy){
+    dependsOn "releaseToHost"
+}
+

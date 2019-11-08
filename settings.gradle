@@ -1,0 +1,5 @@
+rootProject.name = 'cj.netos.market.future'
+include 'cj.netos.market.future.program'
+include 'cj.netos.market.future.ports'
+include 'cj.netos.market.future.engine.dealmaking'
+
